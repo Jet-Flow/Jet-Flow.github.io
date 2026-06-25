@@ -16,7 +16,7 @@
   --ember: #c2682e;        /* the single "best" marker accent */
   --dtop: #7c4dcf;         /* drafter's top pick the target passes over (non-greedy) */
   --data-slate: #3b6ea8;   /* chart series: the rival (DFlash) */
-  --data-green: #2f8f5f;   /* chart series: ours (JetFlow) */
+  --data-green: #2f8f5f;   /* chart series: ours (JetSpec) */
   --data-orange: #c98739;
   --scope: #0c1420;
   --scope-2: #111d2d;
@@ -1429,7 +1429,7 @@ body.dark .theme-toggle #sun { display: inline; }
 .player-shell .lane-card .progress-fill,
 .lane-card .progress-fill { background: var(--data-green); }
 .lane-card.leader .progress-fill { background: var(--data-green); }
-/* non-winner lanes get a calmer bar so JetFlow's reads as the lead */
+/* non-winner lanes get a calmer bar so JetSpec's reads as the lead */
 .lane-card[data-lane-index="0"] .progress-fill { background: #9aa6b2; } /* AR */
 .lane-card[data-lane-index="1"] .progress-fill { background: var(--data-slate); } /* DFlash */
 
@@ -1456,7 +1456,7 @@ body.dark .theme-toggle #sun { display: inline; }
 .player-shell .lane-title::before {
   content: "";
   width: 10px; height: 10px; border-radius: 50%;
-  background: var(--data-green);            /* JetFlow default */
+  background: var(--data-green);            /* JetSpec default */
   flex: none;
 }
 .player-shell .lane-card[data-lane-index="0"] .lane-title::before { background: #9aa6b2; }        /* AR */
@@ -1497,7 +1497,7 @@ body.dark .theme-toggle #sun { display: inline; }
   border-collapse: collapse;
   font-size: 14px;
 }
-.dtable caption { caption-side: bottom; padding-top: 10px; color: var(--muted); font-size: 13.5px; text-align: left; line-height: 1.5; }
+.dtable caption { caption-side: bottom; padding-top: 10px; color: var(--muted); font-size: 14px; text-align: left; line-height: 1.5; }
 .dtable th, .dtable td { padding: 9px 8px; border-bottom: 1px solid var(--rule); text-align: left; vertical-align: baseline; }
 .dtable thead th { border-bottom: 1.5px solid var(--primary); color: var(--primary); font-weight: 600; white-space: normal; }
 .dtable tbody th { font-weight: 600; }   /* row labels (Method names) wrap freely */
@@ -1505,6 +1505,8 @@ body.dark .theme-toggle #sun { display: inline; }
 .dtable tbody tr.hl td, .dtable tbody tr.hl th { background: var(--accent-soft); font-weight: 600; }
 .dtable .win { color: var(--data-green); font-weight: 600; }
 .dtable tbody tr:last-child td, .dtable tbody tr:last-child th { border-bottom: 1.5px solid var(--primary); }
+/* γ-sweep table: make the loss-weighting axis (γ=0/3/7/15) read as ticks */
+.dtable.gamma thead th.num { color: var(--accent); font-family: var(--mono); font-variant-numeric: tabular-nums; letter-spacing: 0.02em; }
 
 /* wide main-results table: 16 columns, kept compact + horizontally scrollable
    so it never forces the page wider than the shared content width */
@@ -1534,7 +1536,7 @@ body.dark .theme-toggle #sun { display: inline; }
 
 
 /* ============================================================
-   §3 "How JetFlow builds the tree" — fixed-frame animated
+   §3 "How JetSpec builds the tree" — fixed-frame animated
    tree-construction demo (best-first reveal + verify).
    ============================================================ */
 .treebuild {
@@ -1585,9 +1587,9 @@ body.dark .theme-toggle #sun { display: inline; }
 .tb-e.tb-bon { stroke-dasharray: 4 3; }
 /* dtop = the drafter's top-ranked child the target passes over (the non-greedy
    advantage): bold violet, distinct from the ember reject and the green accept */
-.tb-n--dtop .tb-chip { stroke: var(--dtop); stroke-width: 2; stroke-dasharray: 3 2; fill: color-mix(in srgb, var(--dtop) 12%, var(--paper-soft)); }
-.tb-n--dtop .tb-tok { fill: var(--dtop); }
-.tb-e.tb-dtop { stroke: var(--dtop); stroke-width: 2; stroke-dasharray: 3 2; }
+.tb-n--dtop .tb-chip { stroke: var(--dtop); stroke-width: 2.6; stroke-dasharray: 3 2; fill: color-mix(in srgb, var(--dtop) 19%, var(--paper-soft)); }
+.tb-n--dtop .tb-tok { fill: var(--dtop); font-weight: 600; }
+.tb-e.tb-dtop { stroke: var(--dtop); stroke-width: 2.6; stroke-dasharray: 3 2; }
 .tb-e.tb-dtop.on { opacity: 1; }
 /* the node currently being expanded gets a brief accent ring */
 .tb-n.exp .tb-chip { stroke: var(--accent); stroke-width: 2; }
@@ -1726,7 +1728,7 @@ body.dark .player-shell .lane-foot .finish-badge { background: var(--accent); co
 .dtable.wide tbody th { position: sticky; left: 0; z-index: 2; background: var(--card); }
 .dtable.wide tr.grp th { background: var(--paper-soft); }
 
-/* headline (budget-256) JetFlow rows read green; a one-line summary ledes the table */
+/* headline (budget-256) JetSpec rows read green; a one-line summary ledes the table */
 .dtable.wide tr.hl td.num { color: var(--data-green); font-weight: 600; }
 .table-summary { max-width: var(--measure); margin: 18px 0 0; color: var(--ink); font-size: 14.5px; line-height: 1.55; }
 

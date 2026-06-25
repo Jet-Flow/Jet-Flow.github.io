@@ -160,7 +160,7 @@
       if (clockLabel && Number.isFinite(value)) clockLabel.textContent = `${Math.round(value)} ms`;
       if (!Number.isFinite(value) || !Number.isFinite(max) || max <= 0 || value < max - 1) return;
       window.clearInterval(poll);
-      const result = `JetFlow ${formatFixed(metrics.headline.tps, 1)} tok/s · ${formatFixed(metrics.headline.speedup_vs_ar, 2)}× vs AR baseline.`;
+      const result = `JetSpec ${formatFixed(metrics.headline.tps, 1)} tok/s · ${formatFixed(metrics.headline.speedup_vs_ar, 2)}× vs AR baseline.`;
       setRunState("settled");
       if (plate) {
         plate.textContent = result;

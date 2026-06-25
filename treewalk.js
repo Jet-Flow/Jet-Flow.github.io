@@ -1,4 +1,4 @@
-/* §3 "How JetFlow builds the tree" — an illustrative, intuitive diagram of one
+/* §3 "How JetSpec builds the tree" — an illustrative, intuitive diagram of one
    drafting round (representative tokens + shape, in the spirit of DDTree's
    explainer). Two stages: Draft (grow the tree best-first, keeping the top few
    continuations at each step, fanning above and below the running text) and
@@ -59,7 +59,7 @@
   // draft + verify copy are kept to a matched length (~2 lines) so switching
   // stages does not change the box height and shove the caption below it.
   var COPY = {
-    draft: "JetFlow drafts the whole tree in one forward pass, keeping the top few continuations at every position, above and below the running text, not only the most likely one.",
+    draft: "JetSpec drafts the whole tree in one forward pass, keeping the top few continuations at every position, above and below the running text, not only the most likely one.",
     verify: "The target verifies the tree in one forward pass, keeps the longest matching prefix including both non-greedy picks, and adds its own next token as a free bonus."
   };
   var READOUT = {
