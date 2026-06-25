@@ -6,7 +6,7 @@
   <meta name="color-scheme" content="light dark">
   <title>JetSpec: Parallel Tree Drafting</title>
   <meta name="description" content="JetSpec: Breaking the Scaling Ceiling of Speculative Decoding with Parallel Tree Drafting. Live decoding replay + results from the paper.">
-  <link rel="stylesheet" href="site.css?v=cf4b70f6">
+  <link rel="stylesheet" href="site.css?v=a2489f9d">
 </head>
 <body>
   <script>
@@ -38,6 +38,7 @@
       <nav class="resource-links" aria-label="Project resources">
         <a href="https://arxiv.org/abs/2606.18394">[Paper]</a>
         <a href="https://github.com/hao-ai-lab/JetSpec">[Code]</a>
+        <a href="https://huggingface.co/JetSpec">[Models]</a>
         <a href="#bibtex">[BibTeX]</a>
       </nav>
     </header>
@@ -375,6 +376,7 @@
     <footer class="footer">
       <a href="https://arxiv.org/abs/2606.18394">Paper</a>
       <a href="https://github.com/hao-ai-lab/JetSpec">Code</a>
+      <a href="https://huggingface.co/JetSpec">Models</a>
       <a href="#demo">Live demo</a>
     </footer>
       <p class="preview-note" style="text-align:center; font:12px/1.6 var(--sans); color:var(--faint); margin:10px 0 0;">Preview build: the live replay is paced from measured B200 throughput (GSM8K); the results tables are the paper’s measured numbers. §3 tree is illustrative.</p>
@@ -387,16 +389,16 @@
     window.PTD_DEMO_RATE = 0.25; /* slow the viewing 4x for legibility; tape times (and TPS) stay real */
     window.PTD_DEMO_LANES = window.PTD_DEMO_LANES || [];
   </script>
-  <script src="lane_ar_hf.js?v=cf4b70f6"></script>
-  <script src="lane_dflash.js?v=cf4b70f6"></script>
-  <script src="lane_ptd.js?v=cf4b70f6"></script>
+  <script src="lane_ar_hf.js?v=a2489f9d"></script>
+  <script src="lane_dflash.js?v=a2489f9d"></script>
+  <script src="lane_ptd.js?v=a2489f9d"></script>
   <script>
     window.PTD_DEMO_LANES_ALL = (window.PTD_DEMO_LANES || []).slice();
     window.PTD_DEMO_LANES = window.PTD_DEMO_LANES_ALL.filter(function (lane) { return lane.lane.method !== "vLLM"; });
   </script>
-  <script src="tree-panel.js?v=cf4b70f6"></script>
-  <script src="player.js?v=cf4b70f6"></script>
-  <script src="site.js?v=cf4b70f6"></script>
+  <script src="tree-panel.js?v=a2489f9d"></script>
+  <script src="player.js?v=a2489f9d"></script>
+  <script src="site.js?v=a2489f9d"></script>
 
   <script>
     /* pin each terminal to its latest tokens + clean lane labels (PTD→JetSpec, no SYNTHETIC) */
@@ -434,9 +436,9 @@
     })();
   </script>
 
-  <script src="treewalk.js?v=cf4b70f6"></script>
+  <script src="treewalk.js?v=a2489f9d"></script>
 
-  <script src="engine_tape.js?v=cf4b70f6"></script>
+  <script src="engine_tape.js?v=a2489f9d"></script>
   <script>
     /* §4 engine demo: tape-driven replay of REAL JetSpec e3-engine generation over
        12 chained MATH-500 problems. The per-problem TPS steps once per problem (not a
